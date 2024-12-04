@@ -8,7 +8,7 @@ from typing import List, Optional, Union
 
 import numpy as np
 import pandas as pd
-import transformers
+#import transformers
 import torch
 
 os.environ['OMP_NUM_THREADS'] = '1'
