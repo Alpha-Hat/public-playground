@@ -8,9 +8,14 @@ from typing import List, Optional, Union
 
 import numpy as np
 import pandas as pd
-#import transformers
+import transformers
 import torch
+import kagglehub
 
+# Download latest version
+#path = kagglehub.model_download("google/gemma-2/transformers/gemma-2-9b")
+
+#print("Path to model files:", path)
 os.environ['OMP_NUM_THREADS'] = '1'
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 PAD_TOKEN_LABEL_ID = torch.nn.CrossEntropyLoss().ignore_index
