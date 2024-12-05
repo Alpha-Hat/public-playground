@@ -5,7 +5,7 @@ import os
 from math import exp
 from collections import Counter
 from typing import List, Optional, Union
-
+import accelerate
 import numpy as np
 import pandas as pd
 import transformers
@@ -140,7 +140,7 @@ class PerplexityCalculator:
         self,
         model_path: str,
         load_in_8bit: bool = False,
-        device_map: str = 'auto',
+        device_map: str = None,# 'auto',
     ):
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_path)
         # Configure model loading based on quantization setting and device availability
