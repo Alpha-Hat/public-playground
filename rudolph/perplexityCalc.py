@@ -19,7 +19,8 @@ import kagglehub
 os.environ['OMP_NUM_THREADS'] = '1'
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 PAD_TOKEN_LABEL_ID = torch.nn.CrossEntropyLoss().ignore_index
-DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+#DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+DEVICE = torch.device('cpu')
 
 
 class ParticipantVisibleError(Exception):
@@ -230,6 +231,8 @@ class PerplexityCalculator:
                     model_inputs.pop('token_type_ids')
 
                 model_inputs = {k: v.to(DEVICE) for k, v in model_inputs.items()}
+
+                self.model.to(DEVICE) #added to fix tensors and inputs being spread across CPU and GPU
 
                 # Get model output
                 output = self.model(**model_inputs, use_cache=False)
