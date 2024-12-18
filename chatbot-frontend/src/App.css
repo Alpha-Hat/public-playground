@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: #c8c5fffd !important; /* Replace with your desired color */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.App-logo {
+  height: 60vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-bounce2 infinite 10s linear;
+    position: relative;
+  }
+}
+
+.App-header {
+  background-color: #0b368c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-bounce {
+  0%, 100% {
+    transform: translateX(0); /* Start and end at the left */
+  }
+  50% {
+    transform: translateX(100%); /* Move to the right */
+  }
+}
+
+@keyframes App-logo-bounce2 {
+
+  from {
+    top: 100px;
+    animation-timing-function: ease-out;
+  }
+
+  25% {
+    top: 50px;
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    top: 100px;
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    top: 75px;
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    top: 100px;
+  }
+
+}
