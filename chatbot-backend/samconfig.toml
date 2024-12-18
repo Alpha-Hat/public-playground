@@ -1,0 +1,36 @@
+version = 0.1
+[default]
+[default.global.parameters]
+stack_name = "chatbot-backend"
+
+[default.deploy]
+[default.deploy.parameters]
+s3_bucket = "chatbot-bucket"
+s3_prefix = "chatbot"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = []
+resolve_image_repos = true
+parameter_overrides = "Stage=\"dev\""
+
+
+
+
+
+
+[default.sync.parameters]
+watch = true
+
+[default.local_start_api.parameters]
+warm_containers = "EAGER"
+[default.local_start_lambda.parameters]
+warm_containers = "EAGER"
+
+[default.build.parameters]
+cached = true
+parallel = true
+
+[default.validate.parameters]
+lint = true
